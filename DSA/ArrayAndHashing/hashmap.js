@@ -6,6 +6,8 @@
 // 1. Chaining: use linked list.
 // 2. Open Addressing: store in next available address.
 
+//Struggled: Yes
+
 class Pair{
     constructor(key, value){
         this.key = key;

@@ -1,3 +1,5 @@
+//Struggled: Yes
+
 var topKFrequent = function(nums, k) {
     map = {}
     for( let num of nums)

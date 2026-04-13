@@ -1,3 +1,5 @@
+//Struggled: Yes
+
 var groupAnagrams = function(strs) {
     function countKeys(str)
     {

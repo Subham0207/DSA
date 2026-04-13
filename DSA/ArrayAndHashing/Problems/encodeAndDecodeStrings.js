@@ -16,9 +16,9 @@ function decode(str) {
     let nextIndex = 0
     while(nextIndex < arr.length)
     {
-        const length = arr[nextIndex]
+        const length = +arr[nextIndex]
         const startIndex = nextIndex + 2
-        const endIndex = Number(startIndex) + Number(length);
+        const endIndex =startIndex + length;
 
         const result = str.substring(startIndex, endIndex);
         console.log("str: ", result, " length: ", length, " startChar:", str[startIndex], " endIndex:", endIndex);

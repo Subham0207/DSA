@@ -1,3 +1,5 @@
+//Struggled: Yes
+
 var trap = function(height) {
 
     let l = 0;
