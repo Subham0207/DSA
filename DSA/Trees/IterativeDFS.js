@@ -1,15 +1,5 @@
-/*
-Types of traversals:
-    1. DFS:
-        a. Inorder: left, root, right:  to get nodes in sorted order
-        b. Preorder: root, left, right
-        c. Postorder: left, right, root
-
-    2. BFS:
-        Level by level traversal
-*/
-
-class Node{
+class Node
+{
     constructor(value, left = null, right = null)
     {
         this.value = value;
@@ -17,6 +7,7 @@ class Node{
         this.right = right;
     }
 }
+
 
 function insertNode(curr, value)
 {
@@ -34,6 +25,7 @@ function insertNode(curr, value)
 
     return curr;
 }
+
 
 function bfs(bst)
 {
@@ -61,7 +53,31 @@ function bfs(bst)
     return res;
 }
 
-const bst = new Node(2);
-insertNode(bst, 10)
-insertNode(bst, 1)
-console.log(bfs(bst));
+function iterativeDFS(curr)
+{
+    if(!curr)
+        return curr
+
+    const stack = [curr];
+    while(stack.length > 0)
+    {
+        const curr = stack.shift();
+        console.log(curr.value)
+
+        curr?.left && stack.push(curr.left);
+        curr?.right && stack.push(curr.right);
+    }
+}
+
+const bst = new Node(10);
+insertNode(bst, 5);
+insertNode(bst, 2);
+insertNode(bst, 11);
+insertNode(bst, 11);
+insertNode(bst, 7);
+insertNode(bst, 8);
+insertNode(bst, 15);
+
+iterativeDFS(bst);
+console.log("BFS: ", bfs(bst))
+
