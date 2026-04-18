@@ -27,6 +27,7 @@ function insert(curr, value)
 
 }
 
+//Struggled: Yes
 function deleteNode(curr, value)
 {
     if(!curr)
