@@ -61,11 +61,13 @@ function iterativeDFS(curr)
     const stack = [curr];
     while(stack.length > 0)
     {
-        const curr = stack.shift();
+        //use pop to get the most recently added node (LIFO) Stack
+        const curr = stack.pop();
         console.log(curr.value)
 
-        curr?.left && stack.push(curr.left);
+        //Push right first so that left is on TOP of the stack.
         curr?.right && stack.push(curr.right);
+        curr?.left && stack.push(curr.left);
     }
 }
 

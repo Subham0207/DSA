@@ -46,6 +46,8 @@ function bfs(bst)
         let qLen = queue.length;
         const level = [];
         for (let index = 0; index < qLen; index++) {
+
+            // BFS uses FIFO (Queue)
             let curr = queue.shift();
 
             if(curr)
