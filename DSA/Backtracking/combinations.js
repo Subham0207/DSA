@@ -7,17 +7,15 @@ function backtrack(start, comb)
 {
     if(comb.length === k)
     {
-        res.push([...comb]);
+        res.push([...comb])
         return;
-    }
+    } 
 
-    //1. since number don't need to repeat we are iterating over the range
-    //2. start is from 1 to 4 i.e. start to n+1
     for(let i=start;i<n+1;i++)
     {
         comb.push(i);
         backtrack(i+1, comb);
-        comb.pop();
+        comb.pop(); 
     }
 }
 
