@@ -1,3 +1,5 @@
+//DP is a directed acyclic graph.
+
 // Ways to solve DP:
 // 1. Recurrive solution
 // 2. Memoize
