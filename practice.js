@@ -1,26 +1,26 @@
-
-const n = 4; // 1,2,3,4
-const k = 2; // each combination of size.
+const nums = [1, 2, 3];
 const res = [];
+const used = new Array(nums.length).fill(false); // Our "memory"
 
-function backtrack(start, comb)
-{
-    if(comb.length === k)
+function backtrack(currentPerm) {
+    if(currentPerm.length === nums.length)
     {
-        res.push([...comb]);
+        res.push([...currentPerm]);
         return;
     }
-
-    //1. since number don't need to repeat we are iterating over the range
-    //2. start is from 1 to 4 i.e. start to n+1
-    for(let i=start;i<n+1;i++)
+    
+    for(let i = 0;i<nums.length;i++)
     {
-        comb.push(i);
-        backtrack(i+1, comb);
-        comb.pop();
+        if(used[i]) continue;
+
+        currentPerm.push(nums[i]);
+        used[i] = true;
+        backtrack(currentPerm);
+
+        currentPerm.pop(nums[i]);
+        used[i] = false;
     }
 }
 
-backtrack(1, []);
-
+backtrack([]);
 console.log(res);
