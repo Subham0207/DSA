@@ -1,5 +1,10 @@
 1. subset traversing in DP: dfs(i+1, currentTarget - nums[i]) || dfs(i+1, currentTarget) // subtract the current element or not.
 2. Longest Increasing Subset: if(nums[j] > nums[i]); For loop in DFS to visit every subset.
 3. word break: if(wordDict.includes(s.slice(start,end)) && dfs(end))
-4. prevMax, currentMax; dfs(i-1)
-5. use Infinity to not skew Math.min. Math.min(dfs(i,total + coins[i]) + 1, dfs(i+1,total));
+4. max product sum: prevMax, currentMax; dfs(i-1)
+5. coin change: use Infinity to not skew Math.min. Math.min(dfs(i,total + coins[i]) + 1, dfs(i+1,total));
+6. decodeways: single character decode and double character decode.
+7. palindromic substrings: loop through the characters and run two while loops. One for odd and another for even using two pointers.
+8. longest palindromic substrings: loop through the character nad run two while loops. One for odd and another for even using two pointers. Track maxLen using r - l + 1.
+9. House Robber II: maxOf(skip first house, skip the last house). Both iterations get thier own nums and memo.
+10. House Robber I: recursively select maxOf(current, withoutCurrent)
