@@ -1,4 +1,4 @@
-1. subset traversing in DP: dfs(i+1, currentTarget - nums[i]) || dfs(i+1, currentTarget) // subtract the current element or not.
+1. parition equal subset: first check if the total is even otherwise return false; If Even our target is total /2. dfs(i+1, currentTarget - nums[i]) || dfs(i+1, currentTarget) // subtract the current element or not.
 2. Longest Increasing Subset: if(nums[j] > nums[i]); For loop in DFS to visit every subset.
 3. word break: if(wordDict.includes(s.slice(start,end)) && dfs(end))
 4. max product sum: prevMax, currentMax; dfs(i-1)
