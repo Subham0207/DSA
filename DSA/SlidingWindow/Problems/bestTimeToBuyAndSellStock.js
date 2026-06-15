@@ -17,6 +17,6 @@ var maxProfit = function(prices) {
 };
 
 const result = maxProfit([7,1,5,3,6,4]);
-const result2 = maxProfit([7,6,4,3,1]);
+// const result2 = maxProfit([7,6,4,3,1]);
 console.log("Result: ", result);
-console.log("Result2: ", result2);
+// console.log("Result2: ", result2);

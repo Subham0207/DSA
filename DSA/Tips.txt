@@ -1,3 +1,5 @@
+Dynamic Programming:
+
 1. parition equal subset: first check if the total is even otherwise return false; If Even our target is total /2. dfs(i+1, currentTarget - nums[i]) || dfs(i+1, currentTarget) // subtract the current element or not.
 2. Longest Increasing Subset: if(nums[j] > nums[i]); For loop in DFS to visit every subset.
 3. word break: if(wordDict.includes(s.slice(start,end)) && dfs(end))
@@ -8,3 +10,8 @@
 8. longest palindromic substrings: loop through the character nad run two while loops. One for odd and another for even using two pointers. Track maxLen using r - l + 1.
 9. House Robber II: maxOf(skip first house, skip the last house). Both iterations get thier own nums and memo.
 10. House Robber I: recursively select maxOf(current, withoutCurrent)
+
+Backtracking:
+
+1. Permutations: For(let i 0:nums.length){if i visited continue; visited=true; backtrack(); visited=false}
+2. Subset2: to remove duplicates sort nums. then in while loop i++ until i+1 != i.

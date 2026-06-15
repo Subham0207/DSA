@@ -9,7 +9,7 @@ function longestSubArray(arr, s)
         currSum += arr[r];
         while (currSum >= s){
             l++;
-            currSum -= arr[l];
+            currSum -= arr[l]; // increament l pointer and remove the value that left the window.
         }
         best = Math.max( best, r - l)
     }

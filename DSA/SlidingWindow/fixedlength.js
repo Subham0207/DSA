@@ -1,7 +1,7 @@
 function maxSumOfSubArrayOfSize(arr, k)
 {
     let l = 0;
-    let r = l + 5;
+    let r = l + k;
 
     const length = arr.length;
 
