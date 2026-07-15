@@ -38,7 +38,6 @@ function courseScheduling(numCourses, prerequisites)
     {
         if(!dfs(i)) return false;
     }
-
     return true;
 }
 
