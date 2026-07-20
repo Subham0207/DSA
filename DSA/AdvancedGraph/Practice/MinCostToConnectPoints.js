@@ -19,7 +19,7 @@ function minCostConnectPoints(points) {
 
     let res = 0;
     const visited = new Set();
-    const minHeap = [[0,0]];
+    const minHeap = [[0,0]]; // we need a point to start min heap from [cost 0, for point 0]
     while(minHeap.length > 0)
     {
         minHeap.sort((a,b)=>a[0]-b[0]);
