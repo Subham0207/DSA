@@ -1,10 +1,12 @@
-// We hardcode minDist[0] = 0 to trick the algorithm into starting with Node 0.
+// Solution: MST ( Minimum Spanning Tree) Track each nodes min distance from the MST.
+// Using Adjacency Matrix
 
-// Every time a new node joins the network, it acts like a new power station—we calculate distances from only this new node to all unconnected nodes.
+// - minDist: n nodes number[Infinity]; visited n nodes boolean[false]
+// - set minDist[0] = 0 starting node distance from MST is 0
+// - loop through minDist; if node not visited and distance < minDist[i]; make it currentNode; This will select 0th node to start the chain.
+// - make currentNode visited
+// - Loop through n nodes; find node closest to current node and set its distance in minDist; since this node is not visited yet it will get selected in next iteration
 
-// If the new node offers a shorter road than an unconnected node previously had in minDist, we overwrite minDist with the shorter distance.
-
-// new node cannot offer a shorter path to an already connected node.
 
 function minCostConnectPoints(points) {
     const n = points.length;
