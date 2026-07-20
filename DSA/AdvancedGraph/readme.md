@@ -6,3 +6,24 @@
 - Dijkstra: finding the shortest paths between nodes in a weighted graph (non-negative edge weights)
 - Prims: (Minimum Spanning Tree) 
 - Krushkal: (Minimum Spanning Tree)
+- Topological sort: Only on (DAG) directed acyclic graph
+
+
+# Graph properties
+- Undirected graph: Connected Componenets
+- Directed graph: Strongly connected components
+- Topological sort (DAGs only)
+- Bipartate Graphs ( 2 Colorability )
+
+
+# Graph problem cheat-sheet
+
+               Is the Graph Directed or Undirected?
+             /                                      \
+       [ Undirected ]                             [ Directed ]
+      /              \                           /            \
+Needs Ordering?   Cycle Check?             Needs Ordering?   Cycle Check?
+      |                |                         |                |
+(Not Possible)    DFS + Parent Track          TopSort           3-State DFS
+                         OR              (DFS / Kahn's)         OR Kahn's
+                     Union-Find
