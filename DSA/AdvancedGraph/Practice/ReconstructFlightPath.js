@@ -3,6 +3,7 @@
 
 function findItinerary(tickets) {
     const adj = {};
+    // sort from or to destination. localcompare does lexical sorting
     tickets.sort((a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))
 
     for(let [src, dest] of tickets)
@@ -15,6 +16,7 @@ function findItinerary(tickets) {
     const res = ['JFK'];
     function dfs(src)
     {
+        // total stops = tickets + 1
         if(res.length === tickets.length + 1) return true;
         if(!adj[src]) return false;
 
@@ -22,11 +24,11 @@ function findItinerary(tickets) {
         for(let i = 0;i<destinations.length;i++)
         {
             const dest = destinations[i];
-            destinations.splice(i,1);
+            destinations.splice(i,1); // remove 1 elements starting from index i
             res.push(dest);
 
             if(dfs(dest)) return true;
-            destinations.splice(i,0,dest);
+            destinations.splice(i,0,dest); // remove 0 elements and add dest starting from index i
             res.pop();
         }
         return false;
