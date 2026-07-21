@@ -4,10 +4,15 @@
 
 # Algorithms
 - Dijkstra: finding the shortest paths between nodes in a weighted graph (non-negative edge weights)
-- Prims: (Minimum Spanning Tree) 
-- Krushkal: (Minimum Spanning Tree)
-- Topological sort: Only on (DAG) directed acyclic graph
-- Bellman fords algorithm
+- Undirected Graph
+      - Prims: (Minimum Spanning Tree) 
+      - Krushkal: (Minimum Spanning Tree)
+      - Dijkstra: shortest path in weigted graph ( non neg edges )
+      - Bellman fords algorithm ( non neg edges )
+- Directed graph
+      - Dijkstra: shortest path in weigted graph ( non neg edges )
+      - Topological sort: Only on (DAG) directed acyclic graph
+      - Bellman fords algorithm ( even with neg edges )
 
 
 # Graph properties
