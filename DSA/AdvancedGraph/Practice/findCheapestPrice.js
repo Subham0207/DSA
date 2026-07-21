@@ -14,7 +14,7 @@ function findCheapestPrice(n, flights, src, dst, k)
         temp = [...prices]  // Snapshot of current prices ( in each level/Breadth )
         
         // This loops runs level by level.
-        for(let [u, v, price] in flights)
+        for(let [u, v, price] of flights)
         {
             if(prices[u] == Infinity)  // Only nodes from previous level/depth have with valid value other than Inf.
                 continue  // Node 'u' hasn't been reached yet

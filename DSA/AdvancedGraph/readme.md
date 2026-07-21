@@ -1,6 +1,6 @@
 # Advaned graph
-
 - To visit every edge once, you can remove the edge after you visit it.
+- if edges are 0 to n you can use edge weights in an array.
 
 # Algorithms
 - Dijkstra: finding the shortest paths between nodes in a weighted graph (non-negative edge weights)
