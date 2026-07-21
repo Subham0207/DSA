@@ -7,6 +7,7 @@
 - Prims: (Minimum Spanning Tree) 
 - Krushkal: (Minimum Spanning Tree)
 - Topological sort: Only on (DAG) directed acyclic graph
+- Bellman fords algorithm
 
 
 # Graph properties

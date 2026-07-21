@@ -1,3 +1,8 @@
+// Bellman ford algorithm
+// Each iteration in k+1 is one level/breadth of the graph. 
+// And the second for loop is executed for each node at that depth.
+// "if prices[u] == float('inf'): continue" is what helps us process valid edges originating from the last depth.
+
 function findCheapestPrice(n, flights, src, dst, k)
 {
     // Step 1: Initialize distances with infinity
@@ -11,7 +16,7 @@ function findCheapestPrice(n, flights, src, dst, k)
         // This loops runs level by level.
         for(let [u, v, price] in flights)
         {
-            if(prices[u] == Infinity)  // Only nodes from previous level/depth have valid value other than Inf
+            if(prices[u] == Infinity)  // Only nodes from previous level/depth have with valid value other than Inf.
                 continue  // Node 'u' hasn't been reached yet
             
             // Update destination using the snapshot value of u
