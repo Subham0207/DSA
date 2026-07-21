@@ -6,7 +6,7 @@ function findCheapestPrice(n, flights, src, dst, k)
 
     // Step 2: Relax edges k + 1 times; k stops means k + 1 flights/edges will be used
     for(let i =0; i<k+1; i++){
-        temp = prices.copy()  // Snapshot of current prices ( in each level/Breadth )
+        temp = [...prices]  // Snapshot of current prices ( in each level/Breadth )
         
         // This loops runs level by level.
         for(let [u, v, price] in flights)
@@ -27,3 +27,5 @@ function findCheapestPrice(n, flights, src, dst, k)
         return -1
     return prices[dst];
 }
+
+console.log(findCheapestPrice(4, [[0,1,200],[1,2,100],[1,3,300],[2,3,100]], 0, 3, 1));
