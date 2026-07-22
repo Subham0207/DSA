@@ -9,14 +9,15 @@ function swimInWater(grid) {
             queue.sort(([x1,y1],[x2,y2])=> grid[x1][y1] - grid[x2][y2]);
             const [r,c] = queue.shift();
 
+            if(visited.has(`${r}-${c}`)) continue;
+            visited.add(`${r}-${c}`);
+
+            maxHeight = Math.max(maxHeight, grid[r][c]); // need to check upto the lower right corner and only then return maxHeight
+
             if (r === rows - 1 && c === columns - 1) {
                 return maxHeight;
             }
 
-            if(visited.has(`${r}-${c}`)) continue;
-            visited.add(`${r}-${c}`);
-
-            maxHeight = Math.max(maxHeight, grid[r][c]);
 
             const directions = [[-1,0],[1,0],[0,-1],[0,1]];
             for(let [dr,dc] of directions)

@@ -24,7 +24,7 @@ function alienDictionary(words)
 
         for(let j=0;j<minLength;j++)
         {
-            if(w1[j] !== w2[j])
+            if(w1[j] !== w2[j]) // only the first differeing character tells us the correct ordering
             {
                 adj[w1[j]].add(w2[j]);
                 break;
@@ -43,11 +43,11 @@ function alienDictionary(words)
         for(let nei of adj[c])
         {
             if(dfs(nei))
-                return true;
+                return true; // return true when cycle detected
         }
         visit[c] = false;
         res.push(c);
-        return false;
+        return false; // no cycle detected
     }
 
     for(let key of Object.keys(adj))
