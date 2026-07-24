@@ -1,6 +1,7 @@
 function dfsCycleDetection(edges)
 {
     const adj = {};
+    // add nodes both sides
     for(let [src, nei] of edges)
     {
         if (!adj[src]) adj[src] = [];
@@ -31,8 +32,6 @@ function dfsCycleDetection(edges)
 
     for (const key of Object.keys(adj)) {
         const node = Number(key);
-
-        // Only start DFS from an unvisited node
         if (!visited.has(node)) {
             if (dfs(node, -1)) {
                 return true;
