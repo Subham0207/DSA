@@ -2,7 +2,7 @@
 // find the edge so the graph has no cycles.
 // return the last edge from the edges removing which there is no cycles.
 // note we are not given number of edges. But are told adding only 1 edge created the cycle
-// 1. Given a tree/acyclic graph: nodes = n then edges = n-1;
+// 1. Given a tree/acyclic undirected graph: nodes = n then edges = n-1;
 // so, n edges are there so there are n nodes.
 
 function redundantConnection(edges)

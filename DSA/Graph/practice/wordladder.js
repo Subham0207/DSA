@@ -32,6 +32,10 @@ function wordLadder(beginWord, endWord, wordList)
         for(let i =0;i<queueLength;i++)
         {
             let word = queue.shift();
+
+            if(visited.has(word)) continue;
+            visited.add(word);
+
             if(word === endWord)
                 return res;
             for(let i =0;i<word.length;i++)
@@ -42,7 +46,6 @@ function wordLadder(beginWord, endWord, wordList)
                     if(!visited.has(adjWord))
                     {
                         queue.push(adjWord);
-                        visited.add(adjWord);
                     }
                 }
                 
