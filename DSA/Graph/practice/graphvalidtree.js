@@ -18,24 +18,24 @@ function graphValidTree(n, edges)
     const visited = new Set();
 
     //for finding cycle in a undirected graph
-    function dfs(next, prev)
+    function cycleFound(next, prev)
     {
         if(visited.has(next))
-            return false;
+            return true;
 
         visited.add(next);
         for(let i of adj[next])
         {
             if(prev === i)
                 continue;
-            if(!dfs(i, next))
-                return false;
+            if(cycleFound(i, next))
+                return true;
         }
-        return true;
+        return false;
     }
 
-    //if graph is fully connected we should be able to traverse the whole graph from 0th node.
-    return dfs(0) && visited.size === n;
+    //if graph is fully connected and no cycle found.
+    return !cycleFound(0) && visited.size === n;
 }
 
 console.log('Answer: ', graphValidTree(5, [[0, 1], [0, 2], [0, 3], [1, 4]]));
