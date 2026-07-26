@@ -2,6 +2,7 @@
 // 1. graph is fully connected
 // 2. No cycles
 // only need visited set to find cycle in undirected graph
+// Using: DFS + tracking Parent
 
 function graphValidTree(n, edges)
 {
