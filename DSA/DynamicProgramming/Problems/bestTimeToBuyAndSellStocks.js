@@ -1,5 +1,6 @@
 var maxProfit = function(prices) {
     const dp = {};
+    // i , isBuying -- next state
     function recurse(i, isBuying)
     {
         if(i >= prices.length)
@@ -12,8 +13,8 @@ var maxProfit = function(prices) {
             return dp[`${i}-${isBuying}`];
         }
 
-        //cooldown as another choice...
-        const cooldownProfit = recurse(i+1, isBuying);
+        //cooldown as another choice... skip i
+        const cooldownProfit = recurse(i+1, isBuying); // not buying, move onto next day, Does not matter if bought yesterday or not
         let profit;
         if(isBuying)
             profit = recurse(i+1, false) - prices[i];
@@ -24,5 +25,5 @@ var maxProfit = function(prices) {
         return dp[`${i}-${isBuying}`]
     }
 
-    return recurse(0, true);
+    return recurse(0, true); // true: buy ith stock
 };
