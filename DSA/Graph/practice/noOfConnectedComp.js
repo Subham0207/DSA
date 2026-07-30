@@ -25,7 +25,7 @@ function  noOfConnectedComponents(n, edges)
         const p2 = find(n2);
         
         if(p1 === p2)
-            return 0;
+            return 0; // same parent
         
         if(rank[p1] > rank[p2])
         {
@@ -38,7 +38,7 @@ function  noOfConnectedComponents(n, edges)
             rank[p2] += rank[p1];
         }
 
-        return 1;
+        return 1; // not same parent
     }
 
     let res = n;
