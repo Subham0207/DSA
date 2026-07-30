@@ -14,7 +14,7 @@ var maxProfit = function(prices) {
         }
 
         //cooldown as another choice... skip i
-        const cooldownProfit = recurse(i+1, isBuying); // not buying, move onto next day, Does not matter if bought yesterday or not
+        const cooldownProfit = recurse(i+1, isBuying); // not buying or selling, move onto next day, Does not matter if bought yesterday or not
         let profit;
         if(isBuying)
             profit = recurse(i+1, false) - prices[i];
