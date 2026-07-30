@@ -1,41 +1,36 @@
-/**
- * @param {number[][]} matrix
- * @return {number}
- */
 var longestIncreasingPath = function(matrix) {
     const rows = matrix.length;
-    const cols = matrix[0].length;
-    const directions = [[-1,0], [1,0], [0,1], [0,-1]]
-    function dfs(x,y)
+    const columns = matrix[0].length;
+    const memo = new Map();
+
+    function dfs(r,c,preVal)
     {
-        //every node is of length 1.
-        let maxLength = 1;
-        for(const [dx, dy] of directions)
-        {
-            const newX = x + dx;
-            const newY = y + dy;
-
-            if(newX >=0 && newX < rows && newY >= 0 &&
-            newY < cols && matrix[newX][newY] > matrix[x][y])
-            {
-                maxLength = Math.max(
-                    maxLength,
-                    1 + dfs(newX, newY) // if there is path 1 will be added.
-                )                
-            }
-        }
-
-        return maxLength;
+        if(r < 0 || c < 0 || r === rows || c === columns ||
+            matrix[r][c] <= preVal
+        )
+            return 0;
+        
+        const key = `${r}-${c}`;
+        if(memo.has(key)) return memo.get(key);
+        let res = 1;
+        res = Math.max(res, 1 + dfs(r+1,c, matrix[r][c]));
+        res = Math.max(res, 1 + dfs(r-1,c, matrix[r][c]));
+        res = Math.max(res, 1 + dfs(r,c+1, matrix[r][c]));
+        res = Math.max(res, 1 + dfs(r,c-1, matrix[r][c]));
+        memo.set(key, res);
+        return res;
     }
 
-    let result = 0;
-    for(let i = 0; i<rows;i++)
+    let max = 0;
+    for(let i =0;i<rows;i++)
     {
-        for(let j = 0;j<cols;j++)
+        for(let j=0;j<columns;j++)
         {
-            result = Math.max(result, dfs(i,j))
+            max = Math.max(max, dfs(i,j,-1))
         }
     }
 
-    return result;
+    return max;
 };
+
+console.log(longestIncreasingPath([[5,5,3],[2,3,6],[1,1,1]]));

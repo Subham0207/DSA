@@ -7,7 +7,7 @@ var findTargetSumWays = function(nums, target) {
     const memo = new Map(); // since total can be negative we use map and not array.
     function dfs(n, total)
     {
-        //This is so you use all numbers.
+        //This is so you use all numbers. (Very very important check)
         if(n === nums.length)
             return total === target ? 1: 0
 
