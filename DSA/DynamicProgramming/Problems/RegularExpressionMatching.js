@@ -20,7 +20,7 @@ function regularExpressionMatching(s,p)
         const match = i < s.length && (s[i] === p[j] || p[j] === '.')
         if(j+1 < p.length && p[j+1] === '*')
         {
-            const res = dfs(i,j+2) || dfs(i+1,j);
+            const res = dfs(i,j+2) || (match && dfs(i+1,j)); // 0 stars OR more than 1 star...
             memo.set(key, res);
             return res;
         }

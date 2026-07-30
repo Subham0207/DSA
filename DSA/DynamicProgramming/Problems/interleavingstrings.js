@@ -3,6 +3,10 @@
 
 function interleavingStrings(s1,s2,s3)
 {
+        if (s1.length + s2.length !== s3.length) {
+        return false;
+    }
+
     const memo = new Map();
     function dfs(i,j)
     {
