@@ -19,7 +19,7 @@ function buildTree(preOrder, inOrder)
     let preOrderIndex = 0;
     function dfs(left,right) // indexes for inorder
     {
-        if(left > right) return 0;
+        if(left > right) return null;
 
         const rootVal = preOrder[preOrderIndex++];
         const node = new TreeNode(rootVal);
