@@ -1,3 +1,7 @@
+// Solution:
+// aaa
+// l<-->r expanding pointers
+
 class Solution {
     /**
      * @param {string} s
