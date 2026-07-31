@@ -11,7 +11,7 @@ function decodeWays(s)
         ways += dfs(i+1);
 
         const num = parseInt(s.slice(i,i+2));
-        if(num >= 10 || num <= 26)
+        if(num >= 10 && num <= 26)
         {
             ways+=dfs(i+2);
         }
