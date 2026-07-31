@@ -1,5 +1,6 @@
 // solution: using inorder traversal
 // we reach the leaf nodes after doing left()...
+// then k-- until its 0 and that is our element
 
 function kthSmallest(root, k)
 {
