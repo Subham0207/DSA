@@ -41,6 +41,16 @@ function iterativeDFS(curr)
         curr?.left && stack.push(curr.left);
     }
 }
+function maxDepth(root) {
+    function dfs(node)
+    {
+        if(node === null) return 0;
+        const [leftHeight, rightHeight] = [dfs(node.left), dfs(node.right)];
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    return dfs(root);
+}
 
 function maxDepth(curr)
 {
