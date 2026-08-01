@@ -1,6 +1,6 @@
 // Solution
 // - keep going one by one in preOrder, to find the next root element to construct the tree.
-// - find the index of root value from preOrder in inOrder.
+// - find the index of current rootVal from preOrder in inOrder.
 // - recurse on the left part of inorder for left subtree.
 // - recurse on the right part of the inorder for right subtree.
 

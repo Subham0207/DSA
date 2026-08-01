@@ -12,11 +12,12 @@ function validTree(root)
         if
         (
             (min !== null && node.val >= max) &&
-            (min !== null && min <= node.val)
+            (min !== null && min >= node.val)
         )
         return false;
 
         // left < node.val so pass as max && right > node.val so pass as min
+        // min and max assignments are coming from right of left or left of right tree.
         return dfs(node.left, min, node.val) && dfs(node.right, node.val,max);
     }
 
