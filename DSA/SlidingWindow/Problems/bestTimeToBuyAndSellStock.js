@@ -1,3 +1,5 @@
+// Solution: note here we are dealing with a variable size window.
+
 var maxProfit = function(prices) {
     //Diff b/w two number to be max...
     let l = 0;

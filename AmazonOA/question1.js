@@ -7,6 +7,57 @@
 // Sample Test case
 // inventory = [1, 1, 1, 0, 1], k = 4, Ans: 7
 
+function minimizeCostTest(inventory, k)
+{
+    // find the window with least no. of 1s
+
+    function countOnes(l, r) {
+        return inventory.slice(l, r + 1).filter(val => val === 1).length;
+    }
+    
+    function selectLeast1sWindow()
+    {
+        let windows = [];
+        let l =0
+        let r =k-1;
+    
+        while(r < inventory.length)
+        {
+            if (countOnes(l, r) > 0)
+                windows.push([l, r]);
+            l++;
+            r++;
+        }
+        
+        //windows sorted by least number of 1s
+        windows.sort(([l1, r1], [l2, r2]) => {
+                    return countOnes(l1, r1) - countOnes(l2, r2);
+        });
+
+        return windows[0];
+    }
+
+    let count = 0;
+    while(inventory.filter(val => val === 1).length > 0)
+    {
+        const bestWindow = selectLeast1sWindow();
+        if(!bestWindow) break;
+        const [l,r] = bestWindow;
+        for(let i=l;i<=r;i++)
+        {
+            if(inventory[i] === 1)
+            {
+                inventory[i] = 0;
+                count += countOnes(l, r);
+                break;
+            }
+        }
+    }
+
+    return count;
+
+}
+
 function minimizeCost(inventory, k)
 {
     const n = inventory.length;
@@ -38,4 +89,4 @@ function minimizeCost(inventory, k)
     return totalCost;
 }
 
-console.log(minimizeCost([1, 1, 1, 0, 1], 4))
+console.log(minimizeCostTest([1, 1, 1, 0, 1], 4))
