@@ -1,6 +1,6 @@
 function longestSubString(s)
 {
-    const strSet = new Set();
+    const strSet = new Set(); // could also use a hashmap
     let l = 0;
     let best = 0;
 
