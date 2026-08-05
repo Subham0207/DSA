@@ -17,7 +17,7 @@
 // k: number
 function characterReplacement(s,k)
 {
-    let count = new Map();
+    let count = {}
     let res = 0;
 
     let l = 0;
@@ -25,16 +25,16 @@ function characterReplacement(s,k)
     for(let r=0;r<s.length;r++)
     {
         // track how many times a character occurs in the window.
-        if(!count.has(s[r])) count.set(s[r], 0);
-        count.set(s[r], 1 + count.get(s[r]));
+        if(!(s[r] in count)) count[s[r]] = 0;
+        count[s[r]]++;
 
-        maxF = Math.max(maxF, count.get(s[r]));
+        maxF = Math.max(maxF, count[s[r]]);
 
         // if Number of characters we need to change to make a string all of same characters > k
         // then shrink window, as only K changes are allowed.
         while((r - l + 1) - maxF > k)
         {
-            count.set(s[l], count.get(s[l]) - 1);
+            count[s[l]]--;
             l +=1;
         }
 
