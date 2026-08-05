@@ -3,3 +3,4 @@
     - Hashmap
 2. variable sliding window
     - Hashmap
+- if vs while to get min or max and incremenet left pointer.
