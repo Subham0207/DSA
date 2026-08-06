@@ -8,6 +8,7 @@
         - with while loop re-calculate min or max inside it. Otherwise window size changes.
 2. Left starts at 0th index and Right starts at arr.length - 1
     a. done using a while loop
+3. Sliding window with Deque ( double ended queue )
 
 # Doubts
 1. Find k closest Elements to x in a sorted array.
