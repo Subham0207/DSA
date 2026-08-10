@@ -1,6 +1,6 @@
 // Solution:
 // using have and need count. And tCount and sCount map.
-// need tracks no of unique characters.
+// both have and need track number of unique characters.
 
 function maxWindowSubString(s,t)
 {
@@ -20,6 +20,8 @@ function maxWindowSubString(s,t)
         let char = s[r];
         sCount[char] = (sCount[char] || 0) + 1;
 
+        // count of all same char match in sCounts; increment have.
+        // so have only contains unique chars that matches
         if(tCount[char] !== undefined && sCount[char] === tCount[char])
         {
             have++;
@@ -34,13 +36,15 @@ function maxWindowSubString(s,t)
                 res = s.slice(l,r+1);
             }
 
-            let charL = s[l];
+            // std window sliding logic.
+            let charL = s[l]; // note to store the value first
             sCount[charL]--;
+            l++;
+            // once count differs, have is decremented and left incremented
             if(tCount[charL] !== undefined  && sCount[charL] < tCount[charL])
             {
                 have--;
             }
-            l++;
         }
     }
     return res;

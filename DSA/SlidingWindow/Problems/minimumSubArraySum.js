@@ -1,4 +1,4 @@
-function maximumSubArraySum(target, nums)
+function minimumSubArraySum(target, nums)
 {
     let l = 0;
     let minLength = Infinity;
