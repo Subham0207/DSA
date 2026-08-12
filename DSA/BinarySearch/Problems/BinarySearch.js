@@ -7,18 +7,18 @@ function binarySearch(nums, target)
 
     while (l <= r)
     {
-        let m = r + Math.floor((l - r)/2)
-        if(nums[m] > target)
+        let mid = Math.floor((l + r)/2);
+        if(nums[mid] > target)
         {
-            r = m - 1;
+            r = mid - 1;
         }
-        else if(nums[m] < target)
+        else if(nums[mid] < target)
         {
-            l = m + 1;
+            l = mid + 1;
         }
         else
         {
-            return m;
+            return mid;
         }
     }
 }
