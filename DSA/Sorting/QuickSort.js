@@ -6,7 +6,7 @@ function quicksort(arr)
     const left = [];
     const right = [];
 
-    for(let i=0;i<arr.length - 1;i++)
+    for(let i=0;i<arr.length - 1;i++) // arr.length -1 since pivot is already reserved
     {
         if(arr[i] < pivot)
         {
