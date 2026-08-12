@@ -1,12 +1,8 @@
 var isPalindrome = function(s) {
     const arr = s.toLowerCase().split('').filter(c => 
-        (c.charCodeAt(0) >= 'a'.charCodeAt(0) && c.charCodeAt(0) <= 'z'.charCodeAt(0))
-        ||
-        (c.charCodeAt(0) >= '0'.charCodeAt(0) && c.charCodeAt(0) <= '9'.charCodeAt(0))
+        /[a-zA-Z0-9]/.test(c)
     );
     
-    console.log(arr);
-
     let l = 0;
     let r = arr.length -1;
 
@@ -14,7 +10,6 @@ var isPalindrome = function(s) {
     {
         if(arr[l] !== arr[r])
         {
-            console.log("l: ",l, " r: ", r, "  ", arr[l], " ", arr[r]);
             return false;
         }
         l++;
