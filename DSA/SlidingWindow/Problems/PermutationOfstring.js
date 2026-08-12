@@ -1,6 +1,7 @@
 // Question: if s1 exists in a permutations of s2.
 
-// solution: fixed sliding window length of s1.length in s2. if the characters match in s1 and s2.
+// solution: fixed sliding window length of s1.length in s2. 
+// if the characters match in s1 and s2 we have our ans.
 
 function matches(map1,map2)
 {

@@ -14,3 +14,11 @@
 
 # Doubts
 1. Find k closest Elements to x in a sorted array.
+2. not intuitive when if or while comes.
+
+# Important formulas
+## Fixed size window of size K. To get inclusive left pointer [l,r] or [r-k+1,r]
+- left pointer = r - k + 1
+- i <= r - k, out of bounds
+## Left and right pointer. inclusive [l,r]
+- Window size = r - l + 1
