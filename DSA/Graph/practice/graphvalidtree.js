@@ -24,6 +24,8 @@ function graphValidTree(n, edges)
             return true;
 
         visited.add(next);
+
+        if(adj[node])
         for(let i of adj[next])
         {
             if(prev === i)
