@@ -1,4 +1,7 @@
 //Struggled: Yes
+// Solution:
+// Find middleRow in matrix that works using binary search
+// Once middleRow found, run binary search on this row to find the value.
 
 function searchA2DMatrix(mat, target)
 {

@@ -1,5 +1,5 @@
 //Input array is sorted...
-
+// 1 2 3 4 5
 function binarySearch(nums, target)
 {
     let l = 0;
@@ -7,7 +7,7 @@ function binarySearch(nums, target)
 
     while (l <= r)
     {
-        let mid = Math.floor((l + r)/2);
+        let mid = Math.floor((l + r)/2); // l + (r-l)/2 => start distance + diff in distance / 2=> (l + r)/2 
         if(nums[mid] > target)
         {
             r = mid - 1;
