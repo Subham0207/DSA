@@ -10,10 +10,10 @@ function carFleet(target, position, speed)
         let time = (target - pos) / spd;
         stack.push(time);
 
-        // time taken by car ahead <= time taken by car behind
+        // time taken by car ahead <= time taken by car behind, that means the behind car catches up to front car.
         // after pop car - 2 is in stack which forms 1 fleet including car -1.
         if(stack.length >= 2 && stack[stack.length - 1] <= stack[stack.length - 2])
-            stack.pop();
+            stack.pop(); // after pop car - 2 is in stack which forms 1 fleet 
     
         return stack.length;
 

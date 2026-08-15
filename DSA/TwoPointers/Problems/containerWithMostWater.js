@@ -9,6 +9,9 @@ var maxArea = function(height) {
         const h = Math.min(height[r], height[l]);
         const area = h * diff;
         maxWater = Math.max(area, maxWater);
+
+        // move which ever height is smallest, since we are targeting maximum water
+        // and water will only be stored until minimum height, before overflowing.
         if(height[r] < height[l])
         {
             r--;

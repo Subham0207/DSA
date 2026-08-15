@@ -9,6 +9,7 @@ var findMin = function(nums) {
     while(l < r)
     {
         const m = Math.floor((l+r)/2);
+        //We are essentially comparing ranges if l to m is sorted or m to r is sorted. One half is always sorted.
         //In rotated sorted array checking if Right < middle (mid is greater than r).
         //Since that is where the small lies.
         // [3, 4, 5, 1, 2]

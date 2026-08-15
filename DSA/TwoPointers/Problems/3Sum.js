@@ -1,17 +1,23 @@
+
+// Three elements whose sum is 0.
 function threesum(arr)
 {  
     arr.sort((a,b)=>a-b);
     let res = [];
-    // two pointers will cover the last two elements
+    // two pointers will cover the last two elements, so we do arr.length - 2
     for(let i=0;i<arr.length - 2;i++)
     {
-        // you cannot Add anything to 0 to get 0.
-        // so once i goes part a val 0 we break and return res;
+        // since arr is sorted and we reached elem 0, 
+        // so we cannot get a sum 0 with elems greater than 0 using rest of the array.
+        // so once arr[i] goes greater than val 0 we break and return res;
         if(arr[i] > 0) break;
+
+        //skipping duplicates, we already processed i-1.
         if(i > 0 && arr[i] === arr[i-1]) continue;
         let l = 0;
         let r = arr.length -1;
 
+        //l < r, because l cannot be equal to r i.e. we cannot use duplicates.
         while(l < r)
         {
             let total = arr[i] + arr[l] + arr[r];

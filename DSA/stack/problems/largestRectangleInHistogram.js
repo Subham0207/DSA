@@ -8,7 +8,7 @@ function largestRectangleInHistogram(heights)
 
         // The idea is , the moment we see dip, we process the top of stack item
         // the top element cannot go any further in height so we get area.
-        // the next dip element can now be pushed with its index to be starting from previous element.
+        // the next dip element can now be pushed with its index to be starting from previous element ( which had a higher height ).
         let start = i;
         while(stack.length > 0 && height < stack[stack.length - 1][1])
         {

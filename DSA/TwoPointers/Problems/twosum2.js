@@ -2,6 +2,7 @@ var twoSum = function(numbers, target) {
     let l = 0;
     let r = numbers.length - 1;
 
+    // l, r needs to be different so we exit whe l === r
     while(l < r )
     {
         const sum = numbers[l] + numbers[r];

@@ -6,6 +6,7 @@ var isPalindrome = function(s) {
     let l = 0;
     let r = arr.length -1;
 
+    // l < r, because if odd length then l === r.
     while(l<r)
     {
         if(arr[l] !== arr[r])

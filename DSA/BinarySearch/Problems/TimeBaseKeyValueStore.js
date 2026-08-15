@@ -46,13 +46,9 @@ class TimeMap {
                 result = arr[mid][1];
                 l = mid + 1;
             }
-            else if(arr[mid][0] > timestamp)
+            else
             {
                 r = mid - 1;
-            }
-            else if(timestamp === arr[mid][0])
-            {
-                return arr[mid][1];
             }
         }
 
