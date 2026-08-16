@@ -1,4 +1,4 @@
-function mergeintervals(intervals)
+function NonOverlappingIntervals(intervals)
 {
     intervals.sort((a,b) => a[1] - b[1]);
     let res = []; //[start,end]
