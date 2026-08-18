@@ -20,7 +20,7 @@ function findCheapestPrice(n, flights, src, dst, k)
                 continue  // Node 'u' hasn't been reached yet
             
             // Update destination using the snapshot value of u
-            if(prices[u] + price < temp[v])
+            if(prices[u] + price < temp[v]) // for first 0 + price < infinity
                 temp[v] = prices[u] + price
         }
         
