@@ -4,10 +4,11 @@
 | Directed   | Start: `out-in=1`, End: `in-out=1`, others equal | `in == out` everywhere    |
 
 
-# Eulerian path
+# Eulerian path 
 path that visits every `edge` exactly once ( NOTE: not every node exactly once )
 - Uses every edge exactly once.
 - Vertices/nodes can be visited multiple times.
+- graph must be `connected`
 
 # Eulerian circuit
 - Uses every edge exactly once
