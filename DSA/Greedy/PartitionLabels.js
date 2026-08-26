@@ -4,7 +4,7 @@
 // 2. let size = 0, end = 0, res = []
 // 3. Loop through string: for char[i], increment size++, 
 // find lastIndex of char[i] from hashmap,
-// if lastIndex > end then end = lastIndex, if we reach end value,
+// if lastIndex > end then end = lastIndex, We do this to get all the duplicate character in same substing.
 // push the size into res, and set size = 0;
 
 function partitionLabels(str)
