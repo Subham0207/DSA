@@ -29,3 +29,7 @@ path that visits every `edge` exactly once ( NOTE: not every node exactly once )
 - Eulerian circuit
     - `0 vertices` have `odd degree`.
     - Every vertex has `even degree`.
+
+
+# Hierholzer's Algorithm
+- Used to find a Eulerian path in a directed graph.
