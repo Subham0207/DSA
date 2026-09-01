@@ -40,7 +40,7 @@ class WordDictionary {
                 let c = word[i];
                 if(c === '.')
                 {
-                    // {a: TrieNode() ,c: TrieNode()}
+                    // curr.children = {a: TrieNode() ,c: TrieNode()}
                     for(let child of Object.values(curr.children))
                     {
                         if(dfs(i+1, child)) // i+1 for matching the next character in the word
@@ -55,7 +55,9 @@ class WordDictionary {
                     curr = curr.children[c];
                 }
             }
-            return curr.word;
+            // after dfs ends and i > word.length ( No forloop ), we will return true/false,
+            // based on if the character is marked as end.
+            return curr.word; 
         }
 
         return dfs(0, this.root);
