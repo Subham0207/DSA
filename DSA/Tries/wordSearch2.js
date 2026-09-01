@@ -1,3 +1,9 @@
+// Question: find words from a list of words that exists in a m * n board.
+
+// Solution: 
+// 1. store the words in a trie data structure
+// 2. Trie allows us to see if a multiple character of different words at the same time.
+
 class TrieNode{
     constructor()
     {
@@ -45,6 +51,7 @@ function findWords(board, words) {
         !(board[r][c] in node.children) || visit.has(`${r}-${c}`))
         return;
 
+        // if current board character matches one of the children
         visit.add(`${r}-${c}`);
 
         node = node.children[board[r][c]];
@@ -55,10 +62,13 @@ function findWords(board, words) {
             //remove the word from the trie.
         }
 
+        // see if we can form one of the word from the trie
         dfs(r+1,c,node,word);
         dfs(r-1,c,node,word);
         dfs(r,c+1,node,word);
         dfs(r,c-1,node,word);
+
+        // back track, so this node can be visited again as part of another word.
         visit.delete(`${r}-${c}`);
 
     }
