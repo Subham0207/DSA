@@ -20,7 +20,8 @@ function reorderList(head)
     //reverse the second half
     let prev = null;
     let curr = slow.next;
-    while(curr)
+    slow.next = null; // severe the first half
+    while(curr) // At the end curr = null, prev = head of second half
     {
         let temp = curr.next;
         curr.next = prev;
@@ -35,8 +36,8 @@ function reorderList(head)
 
     while(second)
     {
-        temp1 = first.next;
-        temp2 = second.next;
+        let temp1 = first.next;
+        let temp2 = second.next;
 
         first.next = second;
         second.next = temp1;
