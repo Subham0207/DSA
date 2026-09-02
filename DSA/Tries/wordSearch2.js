@@ -2,7 +2,7 @@
 
 // Solution: 
 // 1. store the words in a trie data structure
-// 2. Trie allows us to see if a multiple character of different words at the same time.
+// 2. Trie allows us look up words with similar prefix at the same time on the board.
 
 class TrieNode{
     constructor()
@@ -54,7 +54,7 @@ function findWords(board, words) {
         // if current board character matches one of the children
         visit.add(`${r}-${c}`);
 
-        node = node.children[board[r][c]];
+        node = node.children[board[r][c]]; // switch to the matched node's child in the trie
         word += board[r][c];
         if(node.endOfWord)
         {
