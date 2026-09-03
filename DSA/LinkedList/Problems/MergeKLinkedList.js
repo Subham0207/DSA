@@ -22,7 +22,7 @@ function mergelist(l1,l2)
             tail.next = l2;
             l2 = l2.next;
         }
-        tail = tail.next;
+        tail = tail.next; // Note: Ensure tail advances on each turn
     }
 
     if(l1)
@@ -38,6 +38,9 @@ function mergelist(l1,l2)
 }
 
 function mergeKLL(lists){
+
+    if (!lists || lists.length === 0) return null;
+
     while(lists.length > 1) // until there is one list left
     {
         let mergedList = [];
