@@ -64,12 +64,10 @@ function reverseNodesInKGroup(head,k)
             prev = curr;
             curr = temp;
         }
-        
-        
-        // before group prev was the first node, now set it to last node.
-        let temp = groupPrev.next;
-        groupPrev.next = kthNode; // put kth at the begining of the group
-        groupPrev = temp
+    
+        let temp = groupPrev.next; // Now this is end of previous group.
+        groupPrev.next = kthNode; // point groupPrev.next to the begining of the next group.
+        groupPrev = temp // moved to start to next group
         
         printList(dummy);
         console.log('--After--');
