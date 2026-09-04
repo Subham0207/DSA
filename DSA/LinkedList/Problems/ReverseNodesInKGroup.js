@@ -35,20 +35,28 @@ function reverseNodesInKGroup(head,k)
 {
     let dummy = new ListNode(0, head);
     let groupPrev = dummy;
+
+    // Example: 0,1,2,3,4,5,6
+    // dummy -> 0
+    // groupPrev -> 0
     
     printList(dummy);
     
     while(true)
     {
+        // k = 2, 2nd node is 2
         let kthNode = getKthNode(groupPrev, k);
         if(!kthNode) // outside group
         {
             break;
         }
 
+        // 3, i,e, 2 -> 3
         let groupNext = kthNode.next; // one node right after the group
 
         //reverse the group
+        // prev = 3
+        // curr = 1
         let prev = kthNode.next;
         let curr = groupPrev.next;
 
@@ -57,6 +65,10 @@ function reverseNodesInKGroup(head,k)
         console.log('groupprev.next ', groupPrev.next?.val);
         console.log('---------');
         
+        // Dry run: for sample 0->1->2->3
+        // curr = 1, prev = 3
+        // 1->3, 2->1 => 2->1->3
+        // note groupPrev.next = 1, And 1 is now at end of group.
         while(curr !== groupNext)
         {   
             let temp = curr.next;
@@ -64,7 +76,12 @@ function reverseNodesInKGroup(head,k)
             prev = curr;
             curr = temp;
         }
-    
+        
+        // 2->1->3
+        // temp = 1
+        // group.next assinment connects 0->2
+        // groupPrev moves to 1, start of next gorup
+        // => 0->2->1->3
         let temp = groupPrev.next; // Now this is end of previous group.
         groupPrev.next = kthNode; // point groupPrev.next to the begining of the next group.
         groupPrev = temp // moved to start to next group
