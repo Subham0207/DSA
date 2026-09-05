@@ -82,7 +82,7 @@ function reverseNodesInKGroup(head,k)
         // group.next assinment connects 0->2
         // groupPrev moves to 1, start of next gorup
         // => 0->2->1->3
-        let temp = groupPrev.next; // Now this is end of previous group.
+        let temp = groupPrev.next; // This was start in previous group. After reversing, this is before end of previous group.`
         groupPrev.next = kthNode; // point groupPrev.next to the begining of the next group.
         groupPrev = temp // moved to start to next group
         
