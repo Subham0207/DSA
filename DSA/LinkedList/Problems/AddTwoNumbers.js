@@ -1,3 +1,6 @@
+//Question: Add two adjacents nodes of linked lists node with carry.
+
+//Note: Math.floor(num/10) = gives the tens place digit, num % 10 gives ones place digit.
 // Solution:
 // edge cases
 //          1. Two numbers are of different length.

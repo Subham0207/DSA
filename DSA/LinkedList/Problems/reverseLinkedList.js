@@ -19,7 +19,7 @@ var reverseList = function(head) {
         prev = curr;
         curr = temp;
     }
-
+    // return prev since it will have reached the tail so, is head in reversed linkedlist.
     return prev;
 };
 
