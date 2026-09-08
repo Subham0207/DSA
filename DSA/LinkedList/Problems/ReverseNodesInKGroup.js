@@ -77,7 +77,8 @@ function reverseNodesInKGroup(head,k)
             curr = temp;
         }
         
-        // 2->1->3
+        // ** Advance to next group, Update groupPrev **
+        // we reversed connections in this group: 2->1->3
         // temp = 1
         // group.next assinment connects 0->2
         // groupPrev moves to 1, start of next gorup

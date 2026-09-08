@@ -1,28 +1,26 @@
+// Solutions 1: create two hashmaps and compare them
+// Solutoin  2: create one hashmap from first string and decrement key values while looping through second string.
+// Solution 3: Sort both strings, And then equality comparision
+
 function isAnagram(s, t) {
-    function characterCountMap(s)
+    if(s.length !== t.length) return false;
+
+    let sMap = {};
+    for(let c of s)
     {
-        const map1 = {}
-        for(let c of s)
-        {
-            if(!map1[c])
-            {
-                map1[c] = 1;
-            }
-            else{
-                map1[c]+=1;
-            }
-        }
-        return map1;
+        sMap[c] = (sMap[c] || 0) + 1;
     }
 
-    const map1 = characterCountMap(s);
-    const map2 = characterCountMap(t);
-
-    for(let [key,val] of Object.entries(map1))
+    for(let c of t)
     {
-        if(!(map2[key] && map2[key] === val)) 
-            return false;
+        sMap[c]--;
     }
+
+    for(let key in sMap)
+    {
+        if(sMap[key] > 0) return false;
+    }
+
     return true;
 }
 
