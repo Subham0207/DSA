@@ -1,31 +1,27 @@
 // Choosing a delimiter that does not occur in the strings.
 
 function encode(strs) {
-    let encodedStr = '';
+    let res = '';
     for(let str of strs)
     {
-        encodedStr += str.length + "#" + str;
+        res += str.length + '#' + str;
     }
-    console.log("Encoded String: ", encodedStr);
-    return encodedStr;
+
+    return res;
 }
 
 function decode(str) {
-    const arr = str.split('');
-    const resultStrs = [];
-    let nextIndex = 0
-    while(nextIndex < arr.length)
+    let index = 0;
+    let res = [];
+    while(index < str.length)
     {
-        const length = +arr[nextIndex]
-        const startIndex = nextIndex + 2
-        const endIndex =startIndex + length;
-
-        const result = str.substring(startIndex, endIndex);
-        console.log("str: ", result, " length: ", length, " startChar:", str[startIndex], " endIndex:", endIndex);
-        resultStrs.push(result);
-        nextIndex = endIndex;
+        let hashIndex = str.indexOf('#', index);
+        let len = parseInt(str.slice(index, hashIndex)); // len maybe > one digit
+        res.push(str.slice(hashIndex+1, hashIndex+1+len)); // next character after #
+        index = hashIndex+1+len;
     }
-    return resultStrs
+
+    return res;
 }
 
 const dummy_input = ["Hello","World"]
