@@ -1,5 +1,6 @@
 function reconstructFlightPaths(tickets)
 {
+    // sorting tickets in reverse since we need to reverse the result
     tickets.sort((a,b) => b[0].localeCompare(a[0]) || b[1].localeCompare(a[1]));
     const adj = {};
     for(let [start,end] of tickets)
