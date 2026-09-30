@@ -14,10 +14,7 @@ function longestValidParanthesis(s) {
             {
                 stack.push(i)
             }
-            else
-            {
-                maxLength = Math.max(maxLength, i - stack[stack.length - 1]);
-            }
+            maxLength = Math.max(maxLength, i - stack[stack.length - 1]);
         }
     }
     return maxLength;

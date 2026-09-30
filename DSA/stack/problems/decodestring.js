@@ -40,3 +40,4 @@ function decodeString(s)
 }
 
 console.log(decodeString('3[a2[c]]'));
+console.log(decodeString('300[a2[c]]'));
