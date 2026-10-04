@@ -9,9 +9,11 @@ function subsets(nums)
             result.push([...subset]);
             return;
         }
+        // include i
         subset.push(nums[i])
         dfs(i+1);
 
+        // not include i
         subset.pop();
         dfs(i+1);
     }

@@ -19,6 +19,8 @@ class Solution {
                 return false;
             }
 
+            // We reserve current cells, The next cells all branches/paths from this node.
+            // So we need to remember this decision in them. After backtracking we can reset.
             const originalchar = board[x][y];
             board[x][y] = '#';
 
