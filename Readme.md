@@ -13,3 +13,8 @@
 - Backtracking, Binary search, Tries
 - Intervals, Greedy
 - LinkedList
+
+
+# Tips
+- To find max, init max with 0
+- To find min, init min with INFINITY

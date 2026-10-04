@@ -5,6 +5,7 @@ function btMaxPathSum(root)
     {
         if(node === null) return 0;
 
+        // The easiest way is to ignore negative child contributions:
         const leftMax = Math.max(0, dfs(node.left));
         const rightMax = Math.max(0, dfs(node.right));
 

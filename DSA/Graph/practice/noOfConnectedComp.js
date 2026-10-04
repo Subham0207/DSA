@@ -41,7 +41,7 @@ function  noOfConnectedComponents(n, edges)
         return 1; // not same parent
     }
 
-    let res = n;
+    let res = n; // since we initially assumed there are n components.
     for(let [n1,n2] of edges)
     {
         res -= union(n1,n2);

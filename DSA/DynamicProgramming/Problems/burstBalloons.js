@@ -1,6 +1,6 @@
 // Solution:
 // recur using left and right pointers
-// when interating start from left + 1 to right
+// when interating start from left + 1 to right. Since we have 1 at left.
 // left = (ind 0, val 1), right (ind 4, val 1)
 //[1,3,4,5,1]; left = 0 and right = 4;
 // burst val 3 last + burst left part ( 0 elem b/w val 1 and val 3) + burst right part (val 4,5 b/w  val 3 and  val 1)

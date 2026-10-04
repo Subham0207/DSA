@@ -25,3 +25,10 @@ function reconstructFlightPaths(tickets)
 }
 
 console.log('Answer: ', reconstructFlightPaths([["HOU","JFK"],["SEA","JFK"],["JFK","SEA"],["JFK","HOU"]]))
+// { 
+//  SEA: [ ],
+//  JFK: [ ],
+//  HOU: [  ] 
+// }
+// stack: 'HOU', 'JFK', 'SEA', 'JFK'
+// res: JFK, SEA, JFK,  HOU, JFK -> reverse -> JFK, HOU, JFK, SEA, JFK

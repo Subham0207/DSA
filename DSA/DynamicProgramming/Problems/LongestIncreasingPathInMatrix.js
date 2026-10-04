@@ -34,3 +34,4 @@ var longestIncreasingPath = function(matrix) {
 };
 
 console.log(longestIncreasingPath([[5,5,3],[2,3,6],[1,1,1]]));
+console.log(longestIncreasingPath([[7,7,5],[2,4,6],[8,2,0]]));

@@ -25,6 +25,7 @@ function islandsAndTreasure(grid)
             const nextR = r + dr;
             const nextC = c + dc;
 
+            // note: grid[nextR][nextC] === 2147483647 acts as our visited set, Once we update the value we never touch it again.
             if(x >= 0 && y >=0 && x < rows && y < columns &&
                 grid[nextR][nextC] === 2147483647
             )

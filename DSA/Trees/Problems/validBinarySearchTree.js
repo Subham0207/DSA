@@ -9,12 +9,8 @@ function validTree(root)
         if(node === null) return true;
 
         // node.val should be between min and max; else false
-        if
-        (
-            (min !== null && node.val >= max) &&
-            (min !== null && min >= node.val)
-        )
-        return false;
+        if(max !== null && node.val >= max) return false;
+        if(min !== null && node.val <= min) return false;
 
         // left < node.val so pass as max && right > node.val so pass as min
         // min and max assignments are coming from right of left or left of right tree.
