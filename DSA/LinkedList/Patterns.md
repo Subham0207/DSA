@@ -17,3 +17,20 @@
 - now return dummy.next
 
 # Floyd's Cycle Detection
+
+
+# LRU Cache ( using Hashmap and doubly linked list )
+- Helpers
+    - InsertAtFront
+    - Remove a node
+- GET
+- PUT
+    - Key is present
+        - Get node from map
+        - update value
+        - remove
+        - insertAtFront
+    - key is not present
+        - insertAtFront
+        - add to map
+        - remove LRU
