@@ -36,6 +36,8 @@ function reorderList(head)
 
     while(second)
     {
+        // first temp1 ..... temp2 second
+        // first->second->temp1 ..... temp2
         let temp1 = first.next;
         let temp2 = second.next;
 
