@@ -12,33 +12,29 @@ function threesum(nums)
             if(i > 0 && nums[i] === nums[i-1])
                 continue;
 
-            let left = i +1;
-            let right = nums.length - 1;
+            let l = i +1;
+            let r = nums.length - 1;
 
-            while(left < right)
+            while(l < r)
             {
-                let currentSum = nums[i] + nums[left] + nums[right];
+                let currentSum = nums[i] + nums[l] + nums[r];
 
                 if(currentSum === 0)
                 {
-                    triplets.push([nums[i], nums[left], nums[right]]);
+                    triplets.push([nums[i], nums[l], nums[r]]);
+                    l++;
+                    r--;
+
+                    while(nums[r] === nums[r+1]) r--;
+                    while(nums[l] === nums[l-1]) l++;
                 }
-
-                if(currentSum > 0)
+                else if(currentSum > 0)
                 {
-                    right--;
-
-                    //skip duplicates
-                    while(nums[right] === nums[right+1])
-                    right--;
+                    r--;
                 }
                 else
                 {
-                    left++;
-
-                    // skip duplicates
-                    while(nums[left] === nums[left-1])
-                    left++;
+                    l++;
                 }
             }
         }
